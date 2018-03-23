@@ -5,13 +5,15 @@
         <div class ="row">
             <div class="md-9">
                 <div class="container">
-                    <form>
-                        <select class="form-control">
+                    <form method="POST">
+                        <select class="form-control" name="select">
                           {% for stock in stocks %}
-                            <option>{{stock.0}}</option>
+                            <option name="options">{{stock.0}}</option>
                         {% endfor %}
                         </select>
+                        
                        <center><button class="btn btn-lg btn-success" style="margin: 20px">Choose</button></center>
+                    {% csrf_token %}
                     </form>
                 </div>
             </div>
